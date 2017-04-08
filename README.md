@@ -14,7 +14,7 @@ Gecoding Libraries
 
 ### Instruction:
 
-`$ git clone https://github.com/saviour123/`geo-w3w-devcongress.git && cd  
+`$ git clone https://github.com/saviour123/geo-w3w-devcongress.git && cd geo-w3w-devcongress`
 
 `$ pip install -r requirements.txt`
 
