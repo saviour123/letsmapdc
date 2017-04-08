@@ -1,0 +1,24 @@
+.bg-gray {
+  background: #eff4fc;
+  color: #667189;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.rSidebar{
+	padding: 15px 0px 15px 25px;
+}
+
+
+/*map element */
+#map { 
+	width: 600px;
+    height: 400px;  
+}
+
+.s_navbar{
+	padding: 4px 4px 4px 4px;
+	background-color: #edf2f9;
+	border-radius: 4px;
+}
+

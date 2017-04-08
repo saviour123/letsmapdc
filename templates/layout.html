@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>w3w devcongress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/spectre.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Control.Geocoder.css')  }}"/>
+</head>
+<body>
+    <div class="container grid-960 bg-gray">
+        <header class="navbar s_navbar">
+          <section class="navbar-primary">
+              <a href="/" class="navbar-brand mr-10">Home</a>
+              <a href="{{ url_for('w3w') }}" class="navbar-brand mr-10">W3W</a>
+          </section>
+          <section class="navbar-section">
+              <a href="https://github.com/saviour123/geo-w3w-devcongress" target="_blank" class="btn btn-primary input-group-btn">Github</a>
+          </section>
+      </header>
+  </div>
+
+  <div class="container grid-960">
+      <div class="columns">
+        {% block content %}
+        <!-- block content goes here -->
+        {% endblock %}
+        <div class="column col-4 col-xs-12 rSidebar">
+            <ul>
+              <li><a href="https://docs.what3words.com/api/v2/">what3words docs</a></li>
+              <li><a href="https://pypi.python.org/pypi/geopy">geopy</a></li>
+              <li><a href="https://pypi.python.org/pypi/geocoder">geocoder</a></li>
+          </ul>
+      </div>
+      
+  </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+{% block js %}
+<!-- js goes here -->
+{% endblock %}
+</body>
+</html>

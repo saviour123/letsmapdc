@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="column col-12 col-xs-12">
+	<form>
+	<div class="input-group input-inline">
+      <input class="form-input input-sm" type="text" placeholder="search" />
+      <button class="btn btn-primary btn-sm input-group-btn">Search</button>
+    </div>
+	</form>
+</div>
+
+<div class="column col-8 col-xs-12" id="map">
+	<!-- map content -->
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/w3w.js') }}"></script>
+{% endblock %}
