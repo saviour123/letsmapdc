@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="column col-12 col-xs-12">
-	<form>
+	<form action="/w3w" method='POST'>
 	<div class="input-group input-inline">
-      <input class="form-input input-sm" type="text" placeholder="search" />
+      <input class="form-input input-sm" type="text" placeholder="search" name="q" />
       <button class="btn btn-primary btn-sm input-group-btn">Search</button>
     </div>
 	</form>
@@ -15,5 +15,18 @@
 {% endblock %}
 
 {% block js %}
-<script src="{{ url_for('static', filename='js/w3w.js') }}"></script>
+<script>
+
+var map = L.map('map').setView([{{ lat | default('7.005') }}, {{ lng | default('-1.110')}}], 8);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+L.marker([{{ lat | default('5.644443') }}, {{ lng | default('-0.173501') }}]).addTo(map)
+	.bindPopup("<b>Lat: {{ lat }}, Long: {{ lng }} <br> {{ word }}").openPopup();
+var popup = L.popup();
+
+</script>
 {% endblock %}
