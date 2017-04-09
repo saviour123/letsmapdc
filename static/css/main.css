@@ -22,3 +22,6 @@
 	border-radius: 4px;
 }
 
+a.navbar-brand{
+    border-bottom: 1px solid #FFC0CB;
+}

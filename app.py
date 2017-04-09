@@ -3,7 +3,6 @@ import geocoder
 from flask import Flask, render_template, request
 
 DEBUG = True
-PORT = 2000
 TEMPLATE_DIR = 'templates'
 STATIC_DIR = 'static'
 
