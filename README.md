@@ -1,7 +1,13 @@
-## what3words Demo - Devcongress MeetUP
-Google is a giant, but i can also be a giant in my hood. Guess what, build your map with opensource tools. [OSM](http://www.openstreetmap.org) or your own basemap, open geocoders: Nominatim. Mapping Libraries: [http://leafletjs.com/](http://leafletjs.com/)
+## what3words and maps Demo - Devcongress MeetUP
 
-TOOLS
+what3words is location addressing system for the world, whats new? It assigns unique 3words to every 3x3 meter grids. Its an addressing system everyone should know. Countries are
+rapidly adopting it and every developer thinking about location
+should also think 3words, maybe for the future. 
+
+
+The package includes a simple geocoding, search and return what3words. The basemap is [OSM](http://www.openstreetmap.org), open geocoders: Nominatim. Mapping Libraries: [http://leafletjs.com/](http://leafletjs.com/) and with love from [what3words](http://www.what3words.com)
+
+### TOOLS
 * [Python](https://docs.python.org/3/)
 * [Flask](http://flask.pocoo.org/)
 * Leafletjs
