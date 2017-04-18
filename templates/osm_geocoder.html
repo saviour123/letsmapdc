@@ -9,13 +9,18 @@
 	</form>
 </div>
 
-<div class="column col-8 col-xs-12" id="map">
-	<!-- map content -->
+<div class="column col-8 col-xs-12">
+	<div id="map"><!-- map content --></div>
+	<div>
+		<blockquote>
+			I am a full map search engine, I use only Nominatim open Geocoder and extracts the lat/long, wipes it through what3words to get the 3words. I accept anything.
+		</blockquote>
+	</div>
 </div>
 {% endblock %}
 {% block js %}
 <script>
-	var map = L.map('map').setView([{{ lat | default('7.005') }}, {{ lng | default('-1.110')}}], 8);
+	var map = L.map('map').setView([{{ lat | default('7.005') }}, {{ lng | default('-1.110')}}], 3);
 
 	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
