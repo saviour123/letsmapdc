@@ -1,10 +1,15 @@
 import requests
 import geocoder
+import logging
+import requests_toolbelt.adapters.appengine
 from flask import Flask, render_template, request
+
 
 DEBUG = True
 TEMPLATE_DIR = 'templates'
 STATIC_DIR = 'static'
+requests_toolbelt.adapters.appengine.monkeypatch()
+
 
 app = Flask(__name__)
 
@@ -44,7 +49,6 @@ def geocoder_words():
 		lat = dumps['lat']
 		lng = dumps['lng']
 		address = dumps['address']
-
 		# run conversion for what3words
 		conn = requests.get("https://api.what3words.com/v2/reverse?coords=" + \
 			str(lat) + "%2C" + str(lng)  +"&key=WVZ71D9D&lang=en& \
@@ -53,6 +57,12 @@ def geocoder_words():
 		words = what3words['words']
 		return render_template('osm_geocoder.html', address=address, lng=lng, lat=lat, words=words)
 	return render_template('osm_geocoder.html')
+
+@app.errorhandler(500)
+def server_error(e):
+    # log the error and stacktrace.
+    logging.exception("Something Strange Happen!")
+    return 'An internal error occurred.', 500
 
 
 if __name__ == "__main__":
